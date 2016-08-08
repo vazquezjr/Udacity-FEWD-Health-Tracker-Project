@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>Health Tracker App</title>
+
+</head>
+
+<body>
+
+  <section id="tracker-app">
+
+    <header id="header">
+      <h1>Total Calories: <span id="calorie-count"></span></h1>
+      <input id="new-food-item" placeholder="What food are you searching for?">
+    </header>
+
+    <section id="main">
+      <ul id="food-list"></ul>
+    </section>
+
+    <footer id="footer">
+      <p>Health Tracker Application
+      <p>Created by Ruben Vazquez
+    </footer>
+
+  </section>
+
+  <script type="text/template" id="item-template">
+    <div class="view">
+      <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>
+      <label><%= title %></label>
+      <button class="destroy"></button>
+    </div>
+    <input class="edit" value="<%= title %>">
+  </script>
+
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/lib/underscore-min.js"></script>
+  <script src="js/lib/backbone-min.js"></script>
+  <script src="js/lib/backbone.localStorage.js"></script>
+
+</body>
+</html>
