@@ -20,6 +20,9 @@ app.AppView = Backbone.View.extend({
 		this.$results = this.$('#search-results');
 		this.$main = this.$('#main');
 		this.$calories = this.$('#total-calories');
+		this.$loading = this.$('#loading');
+
+		this.$loading.hide();
 
 		// Add listeners to the view to perform functions and to re-render the view when necessary.
 		this.listenTo(app.Results, 'add', this.addOneResult);
@@ -29,6 +32,15 @@ app.AppView = Backbone.View.extend({
 
 		this.listenTo(app.Results, 'all', this.render);
 		this.listenTo(app.Foods, 'all', this.render);
+
+		// Code to show a loading indicator once an ajax request has started and to hide it when the request is complete.
+		$(document).ajaxStart(function() {
+  			$("#loading").show();
+		});
+
+		$(document).ajaxComplete(function() {
+			$("#loading").hide();
+		})
 
 		// Grab the food models that have persisted from the last page load.
 		app.Foods.fetch();
@@ -90,8 +102,16 @@ app.AppView = Backbone.View.extend({
     		dataType: 'json',
     	}).done(function(data) {
 
+    		$('#search-results').text('');
+
     		// When the data arrives, store the array of results in a variable and create a model for each result.
     		var foodItems = data.hits;
+
+    		// If the search returns no results, show the user a message.
+    		if (data.hits.length === 0) {
+    			$('#search-results').text('This search did not find any results');
+    		}
+
     		for (var i = 0; i < data.hits.length; i++) {
     			app.Results.create({name: foodItems[i].fields.item_name, calorieCount: foodItems[i].fields.nf_calories});
     		}
