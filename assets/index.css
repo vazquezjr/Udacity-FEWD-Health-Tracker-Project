@@ -24,6 +24,27 @@ ul#search-results {
 	padding: 0;
 }
 
+li div {
+	padding: 1em;
+	cursor: pointer;
+	width: 80%;
+	margin: auto;
+}
+
+li:hover {
+	background-color: white;
+	color: black;
+}
+
+ul#food-list {
+	list-style-type: none;
+	text-align: center;
+	padding: 0;
+	color: black;
+	background-color: #ccc;
+}
+
+
 #footer {
 	color: white;
 	text-align: center;
