@@ -3,10 +3,21 @@ var app = app || {};
 
 var FoodList = Backbone.Collection.extend({
 	
-	model: app.FoodItem,
+	model: app.Food,
 
-	localStorage: new Backbone.LocalStorage('food-backbone')
+	localStorage: new Backbone.LocalStorage('food-backbone'),
+
+	calculateCalories: function() {
+		//console.log(this);
+		var totalCalories = 0;
+
+		for (var i = 0; i < this.length; i++) {
+			totalCalories += this.models[i].attributes.calorieCount;
+		}
+
+		return totalCalories;
+	}
 
 });
 
-app.Food = new FoodList();
+app.Foods = new FoodList();
