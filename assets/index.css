@@ -18,6 +18,10 @@ input {
 	text-align: center;
 }
 
+.loading {
+	padding-top: 1em;
+}
+
 ul#search-results {
 	list-style-type: none;
 	text-align: center;
