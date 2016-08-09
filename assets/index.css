@@ -1,0 +1,31 @@
+.container {
+	width: 80%;
+	background-color: #00c;
+	margin: auto;
+}
+
+#header {
+	width: 80%;
+	text-align: center;
+	margin: auto;
+	background-color: #c00;
+	color: #fff;
+	padding: 1em;
+}
+
+input {
+	width: 80%;
+	text-align: center;
+}
+
+ul#search-results {
+	list-style-type: none;
+	text-align: center;
+	padding: 0;
+}
+
+#footer {
+	color: white;
+	text-align: center;
+	padding: 1em;
+}
