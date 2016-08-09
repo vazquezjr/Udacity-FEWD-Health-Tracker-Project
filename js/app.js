@@ -1,11 +1,10 @@
-  // js/app.js
-
+  
   var app = app || {};
   var ENTER_KEY = 13;
 
   $(function() {
 
-    // Kick things off by creating the **App**.
+    // Start the app once the DOM is finished loading.
     new app.AppView();
 
   });
