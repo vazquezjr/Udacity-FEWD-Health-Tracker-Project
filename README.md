@@ -4,9 +4,9 @@ A web application that allows the user to search for different food items using 
 
 ## What can the user do?
 
--Search for food items
--Add a food item by clicking its name.
--Remove a food item from the list by clicking its name again
+- Search for food items
+- Add a food item by clicking its name.
+- Remove a food item from the list by clicking its name again
 
 ## Features
 
