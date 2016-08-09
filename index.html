@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>Health Tracker App</title>
 
+  <link rel="stylesheet" href="assets/index.css">
+
 </head>
 
 <body>
@@ -14,6 +16,7 @@
     <header id="header">
       <h1>Total Calories: <span id="calorie-count"></span></h1>
       <input id="new-food-item" placeholder="What food are you searching for?">
+      <ul id="search-results"></ul>
     </header>
 
     <section id="main">
@@ -27,19 +30,24 @@
 
   </section>
 
-  <script type="text/template" id="item-template">
-    <div class="view">
-      <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>
-      <label><%= title %></label>
-      <button class="destroy"></button>
+  <script type="text/template" id="result-template">
+    <div class="result-view">
+      <label><%= name %> , <%= calorieCount %></label>
     </div>
-    <input class="edit" value="<%= title %>">
   </script>
 
   <script src="js/lib/jquery.min.js"></script>
   <script src="js/lib/underscore-min.js"></script>
   <script src="js/lib/backbone-min.js"></script>
   <script src="js/lib/backbone.localStorage.js"></script>
+
+  <script src="js/models/food-item.js"></script>
+  <script src="js/models/search-result.js"></script>
+  <script src="js/collections/food.js"></script>
+  <script src="js/collections/results.js"></script>
+  <script src="js/views/app.js"></script>
+  <script src="js/views/result.js"></script>
+  <script src="js/app.js"></script>
 
 </body>
 </html>
